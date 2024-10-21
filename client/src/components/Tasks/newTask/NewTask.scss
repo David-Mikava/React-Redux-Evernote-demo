@@ -1,0 +1,21 @@
+@import '../../../App/App.scss';
+
+.new-page {
+  width: 70%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login {
+  display: flex; 
+  flex-direction: column;
+  margin-top: 12px;
+ 
+  & input {
+    @include input;
+  }
+  & button {
+    @include btn;
+  }
+}

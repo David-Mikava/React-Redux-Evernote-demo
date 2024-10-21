@@ -1,0 +1,123 @@
+@import '../../App/App.scss';
+
+.home {
+  .tg {
+    margin-block-start: 1em;
+    margin-block-end: 0em;
+    color: $grey;
+  }
+  & h1 {
+    margin-block-start: 0.2em;
+  }
+  & .title-task {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-size: inherit;
+    & h3 {
+      display: inline-block;
+      text-align: center;
+      border-radius: 5px;
+      margin: 0;
+      width: 100px;
+      height: 25px;
+      transition: all 0.5s;
+    }
+    *:hover {
+      background-color: #cecece;
+    }
+  }
+}
+
+.home-info {
+  display: flex;
+}
+
+.home-task {
+  margin-right: 400px;
+}
+
+.tasks {
+  list-style: none;
+  padding-inline-start: 20px;
+  & li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.tasks input[type='checkbox'] {
+  margin-right: 15px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a662ec;
+  border-radius: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+  appearance: none;
+  outline: none; /* Убираем обводку */
+  position: relative; /* Позволяет позиционировать псевдоэлемент */
+}
+
+.tasks input[type='checkbox']:checked {
+  background-color: #a662ec;
+}
+
+.tasks input[type='checkbox']::before {
+  content: '\2713'; /* Код символа "галочка" */
+  font-size: 16px; /* Размер галочки */
+  color: white; /* Цвет галочки */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Скрыть галочку по умолчанию */
+  transition: opacity 0.5s; /* Плавное появление */
+}
+
+.tasks input[type='checkbox']:checked::before {
+  opacity: 1; /* Показать галочку при нажатии на чекбокс */
+}
+
+.home-notebook {
+  display: flex;
+  list-style: none;
+  padding-inline-start: 20px;
+  & li {
+    margin-right: 10px;
+    width: 172px;
+    height: 260px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.5s;
+    & a {
+      height: 250px;
+      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      color: black;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        margin-left: 15px;
+        left: 0;
+        bottom: 0;
+        width: 80%;
+        height: 1px;
+        background-color: #d9d9d9;
+      }
+    }
+
+    & p {
+      margin-block-end: 0em;
+      padding: 10px 20px;
+    }
+  }
+  & li:hover {
+    background-color: #f1f1f1;
+  }
+}

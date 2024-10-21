@@ -1,0 +1,40 @@
+.page {
+  width: 100%;
+}
+
+.title-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 100px;
+  & .a {
+    text-decoration: none;
+    color: rgb(110, 28, 192);
+    font-size: 18px;
+    height: 10px;
+  }
+}
+
+.div-task {
+  margin-left: 20px;
+  & li {
+    padding: 10px 20px;
+    position: relative; /* Позволяет позиционировать псевдоэлементы */
+  }
+  & li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 99%;
+    height: 1px; /* Высота линии */
+    background-color: #d9d9d9; /* Цвет линии */
+  }
+
+  & li::before {
+    top: 0;
+  }
+
+  & li::after {
+    bottom: 0;
+  }
+}
